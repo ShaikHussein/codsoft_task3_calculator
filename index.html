@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            table{
+                border: 1px solid;
+                table-layout: inherit;
+                margin-left:20px;
+                margin-top: 123px;
+                box-shadow: 0 0 15px;
+            }
+            input[type='button']{
+                padding: 10px 10px;
+                width: 100%;
+                color: black;
+                background-color: rgb(133, 142, 146);
+            }
+            input[type='button']:hover{
+                background-color: aliceblue;
+                cursor: pointer;
+            }
+            input[type='text']{
+                padding: 10px 30px;
+                font-size:large;
+            }
+            h1{
+                font-size: 80px;
+            }
+           
+        </style>
+        <script>
+          function fun(val){
+            var a=document.getElementById('result');
+            a.value += val;
+          }  
+          function result(){
+            var n1=document.getElementById('result').value;
+            var n2=eval(n1);
+            document.getElementById('result').value=n2;
+          }
+          function allClear(){
+            var c=document.getElementById('result');
+            c.value= ' ';
+          }
+          function del(){
+            var d=document.getElementById('result');
+            d.value=d.value.slice(0,-1);
+          }
+        </script>
+    </head>
+    <center>
+    <body>
+        <h1>Calculator</h1>
+        <table id="Cal">
+
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="result">
+                </td>
+            </tr>
+            <tr>
+                
+                <td><input type="button" value="1" onclick="fun('1')"></td>
+                <td><input type="button" value="2" onclick="fun('2')"></td>
+                <td><input type="button" value="3" onclick="fun('3')"></td>
+                <td><input type="button" value="AC" onclick="allClear()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="fun('4')"></td>
+                <td><input type="button" value="5" onclick="fun('5')"></td>
+                <td><input type="button" value="6" onclick="fun('6')"></td>
+                <td><input type="button" value="DEL" onclick="del()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="fun('7')"></td>
+                <td><input type="button" value="8" onclick="fun('8')"></td>
+                <td><input type="button" value="9" onclick="fun('9')"></td>
+                <td><input type="button" value="/" onclick="fun('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="fun('0')"></td>
+                <td><input type="button" value="00" onclick="fun('00')"></td>
+                <td><input type="button" value="." onclick="fun('.')"></td>
+                <td><input type="button" value="+" onclick="fun('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="*" onclick="fun('*')"></td>
+                <td><input type="button" value="-" onclick="fun('-')"></td> 
+                <td colspan="2"><input type="button" value="=" onclick="result()"></td>
+            </tr>
+        </table>
+    </body>
+</center>
+</html>
